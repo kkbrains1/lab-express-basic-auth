@@ -1,0 +1,16 @@
+<h2>Profile page - edit name form</h2>
+
+{{#if user}}
+  
+  <h3>Your user ID is {{user._id}}</h3>
+  <h3>You username is {{ user.userName }}</h3>
+
+  <form action="" method="POST">
+    <label for="name-edit"></label>
+    <input type="text" name="name" id="name-edit" placeholder="Name">
+
+    <button>Submit changes</button>
+  </form>
+
+{{/if}}
+

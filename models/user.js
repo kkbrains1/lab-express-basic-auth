@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema({
     type: String
     //minlength: 16,
     //required: true
+  },
+  name : {
+    type: String
   }
 });
 

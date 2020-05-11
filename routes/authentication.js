@@ -14,6 +14,7 @@ authenticationRouter.get('/sign-up', (req, res) => {
 authenticationRouter.post('/sign-up', (req, res, next) => {
   //console.log(req.body);
   const userName = req.body.username;
+  const name = req.body.name;
   const password = req.body.password;
   //console.log(password.length);
 /*   if (password.length <= 6) {
@@ -24,7 +25,8 @@ authenticationRouter.post('/sign-up', (req, res, next) => {
     if (password.length >= 4) {
       return User.create({
         userName,
-        passwordEncypted : hashAndSalt
+        passwordEncypted : hashAndSalt,
+        name
       });
     } else {
       return Promise.reject(new Error('PASSWORD_LENGTH_IS_MINIMUM_6_CHARACTERS'));

@@ -8,7 +8,7 @@
     <nav>
       <a href="/">Home</a>
       {{#if user}}
-        <a href="/profile">{{ user.name }}</a>
+        
         <form action="/authentication/sign-out" method="POST">
           <button>Sign Out</button>
         </form>

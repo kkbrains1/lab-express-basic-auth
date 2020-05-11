@@ -1,7 +1,10 @@
-<h2>Welcome back!</h2>
+<h2>Profile page</h2>
 
 {{#if user}}
-  <h3>Welcome {{ user.userName }}</h3>
+  <h3>Welcome back {{ user.name }}</h3>
   <h3>Your user ID is {{user._id}}</h3>
+  <h3>You username is {{ user.userName }}</h3>
+
+  <a href="/private/profile/edit">Edit Profile Name</a>
 {{/if}}
 
