@@ -1,4 +1,4 @@
-const expressSession = require('express-session')
+/* const expressSession = require('express-session')
 const mongoStore = require('connect-mongo')(expressSession);
 const mongoose = require('mongoose');
 
@@ -16,4 +16,4 @@ const expressSessionMW = ({
   })
 });
 
-module.exports = expressSessionMW;
+module.exports = expressSessionMW; */

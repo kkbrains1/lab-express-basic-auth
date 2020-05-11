@@ -8,12 +8,16 @@ const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
 //const expressSessionMW = require('./midleware/express-session')
+const deSerialiseUser = require('./midleware/deserialise-user');
+const responseLocals = require('./midleware/response-locals');
+
 
 const mongoStore = connectMongo(expressSession);
 
 
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
+const privateRouter = require('./routes/privateRouter');
 
 const app = express();
 
@@ -51,8 +55,12 @@ app.use(
   })
 );
 
+app.use(deSerialiseUser);
+app.use(responseLocals);
+
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/private', privateRouter);
 
 
 // Catch missing routes and forward to error handler
