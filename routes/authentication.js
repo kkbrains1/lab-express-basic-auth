@@ -21,7 +21,7 @@ authenticationRouter.post('/sign-up', (req, res, next) => {
   } */
   bcrypt.hash(password, 10)
   .then(hashAndSalt => {
-    if (password.length >= 6) {
+    if (password.length >= 4) {
       return User.create({
         userName,
         passwordEncypted : hashAndSalt
@@ -30,10 +30,7 @@ authenticationRouter.post('/sign-up', (req, res, next) => {
       return Promise.reject(new Error('PASSWORD_LENGTH_IS_MINIMUM_6_CHARACTERS'));
     }
   })
-  .then(userDoc => {
-    console.log(userDoc);
-    res.redirect('/');
-  })
+  .then(    res.redirect('/')   )
   .catch(error => {
     next(error);
   });
@@ -73,5 +70,9 @@ authenticationRouter.post('/sign-in', (req, res, next) => {
     });
 });
 
+authenticationRouter.post('/sign-out', (req, res,) => {
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = authenticationRouter;

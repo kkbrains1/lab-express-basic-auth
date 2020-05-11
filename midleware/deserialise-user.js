@@ -6,7 +6,7 @@ const deSerialiseUser = (req, res, next) => {
     User.findById(userId)
       .then(userDoc => {
         req.user = userDoc;
-        console.log('deserialised', req.user);
+        //console.log('deserialised', req.user);
         next();
       })
       .catch(error => {

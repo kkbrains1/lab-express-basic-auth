@@ -12,5 +12,10 @@ privateRouter.get('/private', privateRoute, (req, res) => {
   res.render('private');
 });
 
+privateRouter.get('/profile', privateRoute, (req, res) => {
+  res.render('profile');
+  //console.log('profilepage req', req.user);
+});
+
 
 module.exports = privateRouter;
