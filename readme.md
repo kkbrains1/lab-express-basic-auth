@@ -37,6 +37,8 @@ $ npm install
 
 Now you are ready to start 🚀
 
+
+
 ## Iteration 1 - Sign Up
 
 We have to create the sign up functionality of the application, that allows new users to create an account. The users have to provide the following information:
